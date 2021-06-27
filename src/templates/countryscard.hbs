@@ -1,0 +1,31 @@
+{{#each this}}
+  <article class="article-countries">
+      
+      <h1>{{name}}</h1>
+<div class="image-container">
+    
+    <div class="data-container">
+        <p>capital:<span>{{capital}}</span></p>
+        <p>population:<span> {{population}}</span></p>
+        <p>timezones:</p>
+        <ul>
+         {{#each this.timezones}}
+            <li>{{this}}</li>
+                      
+            {{/each}}
+    </ul>
+
+        {{!-- <p>timezones:<span>{{timezones}}</span></p> --}}
+        <p>languages:</p>
+        <ul>
+            {{#each this.languages}}
+            <li>{{name}}</li>
+            {{/each}}
+        </ul>
+        
+    </div>
+    <img src="{{flag}}" alt="{{name}}">
+</div>
+
+  </article>
+{{/each}}

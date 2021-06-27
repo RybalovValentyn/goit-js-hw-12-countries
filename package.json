@@ -21,11 +21,20 @@
     "url": "https://github.com/RybalovValentyn/goit-js-hw-12-countries/issues"
   },
   "devDependencies": {
+    "@pnotify/font-awesome4": "^5.2.0",
+    "@pnotify/paginate": "^5.2.0",
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-handlebars-precompile": "^1.0.2",
     "parcel-plugin-nuke-dist": "^1.0.1",
+    "pnotify": "^5.2.0",
     "posthtml-include": "^1.6.2",
     "sass": "^1.32.8"
   },
-  "dependencies": {}
+  "dependencies": {
+    "debounce": "^1.2.1",
+    "lodash.debounce": "^4.0.8",
+    "material-design-icon-fonts": "^3.0.1",
+    "material-design-icons": "^3.0.1",
+    "parcel-plugin-handlebars": "^0.4.4"
+  }
 }
