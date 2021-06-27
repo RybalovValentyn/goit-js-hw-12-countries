@@ -29,16 +29,14 @@ inputSearch.addEventListener('input', debounce((onSearch),500));
 function onSearch(e) {
   e.preventDefault();
   let country = ' '; 
-
+  ClearCountriesName();
   country = inputSearch.value;
 if (country != '') {
   API.fetchCountries(country)
   .then( countries =>{
-    ClearCountriesName();
     renderCoutriesName(countries)})
     .catch(onFetchError)
-    
-}
+    } 
 } 
 function renderCoutriesName(countries) {
 if(countries.length > 0){
