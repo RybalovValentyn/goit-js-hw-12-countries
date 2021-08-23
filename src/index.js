@@ -22,7 +22,7 @@ const searchForm = document.querySelector('.js-search-form');
 const countriesCards = document.querySelector('.countries');
 
 
-let countries = [];
+// let countries = [];
 
 inputSearch.addEventListener('input', debounce((onSearch),500));
 
@@ -31,7 +31,7 @@ function onSearch(e) {
   let country = ' '; 
   ClearCountriesName();
   country = inputSearch.value;
-if (country != '') {
+if (country != ' ') {
   API.fetchCountries(country)
   .then( countries =>{
     renderCoutriesName(countries)})
@@ -39,12 +39,12 @@ if (country != '') {
     } 
 } 
 function renderCoutriesName(countries) {
-if(countries.length > 0){
-  if (countries.length > 1) {
+    if(countries.length > 0  && countries.length < 10){
+      if (countries.length > 1) {    
     countriesContainer.insertAdjacentHTML('beforeend', countryNameHbs(countries));
     onInputError()
   } else
-  renderCoutriesCard(countries);
+    renderCoutriesCard(countries);
   return
 } 
 
@@ -67,7 +67,7 @@ error({
   type: 'notice',
   icons: 'material',
   maxTextHeight: null,
-  delay: '1000',
+  delay: '2000',
   closer: false,
   sticker: false,
   textTrusted: true,
@@ -83,7 +83,7 @@ function onInputError() {
     type: 'error',
     icons: 'material',
     maxTextHeight: null,
-    delay: '1000',
+    delay: '2000',
     closer: false,
     sticker: false,
     textTrusted: true,
